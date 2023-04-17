@@ -68,6 +68,7 @@ export const CourseComponent: FC<Props> = ({
           <div className="container px-6">
             {course?.lessons
               .sort((l1, l2) => (l1.order - l2.order))
+             // можливо варто винести розмітку lesson в окремий компонент
               .map((lesson: Lesson) => {
                 const poster = lesson.status === 'locked'
                   ? 'https://image.shutterstock.com/image-vector/lock-icon-260nw-425675884.jpg'
