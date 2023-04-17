@@ -1,3 +1,5 @@
+// Interface name should start with I letter.
+// ICourse, IMeta, ILesson etc.
 export interface Course {
   id: string,
   title: string,
