@@ -41,7 +41,7 @@ function request<T>(
         })
     })
 };
-
+// гадаю неправильний дженерик при виклику функції request властивості getCourses (повертається об'єкт з властивістю courses, а не масив курсів)
 export const fetchClient = {
   getCourses: () => request<Course[]>(COURSES),
   getCourse: (id: string) => request<Course>(`${COURSES}/${id}`)
