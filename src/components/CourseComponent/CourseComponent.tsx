@@ -102,6 +102,7 @@ export const CourseComponent: FC<Props> = ({
 
                     <div className="columns">
                       <div className="column" id={`lesson-${lesson.order}`}>
+{/* можливо варто спробувати реалізувати зберігання прогресу перегляду відео локально, як зазначено в описі тестового завдання*/}
                         <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
                       </div>
 
