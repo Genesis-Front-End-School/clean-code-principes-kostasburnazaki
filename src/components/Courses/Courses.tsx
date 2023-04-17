@@ -26,6 +26,7 @@ export const Courses: FC<Props> = ({ courses }) => {
   return (
     <ul className='has-text-centered'>
       {courses.map((course: Course) => {
+{/* можливо варто винести розмітку course в окремий компонент */}
         const videoJsOptions = {
           muted: true,
           crossorigin: true,
