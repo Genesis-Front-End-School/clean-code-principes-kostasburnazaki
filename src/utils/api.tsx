@@ -20,7 +20,7 @@ function handleErrors(response: any) {
     }
     return response.json();
   }
-
+// можливо варто спробувати переписати асинхронну функцію за допомогою async await
 function request<T>(
   url: string,
 ): Promise<any> {
