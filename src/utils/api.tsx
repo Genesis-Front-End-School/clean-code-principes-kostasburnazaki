@@ -21,6 +21,7 @@ function handleErrors(response: any) {
     return response.json();
   }
 // можливо варто спробувати переписати асинхронну функцію за допомогою async await
+// гадаю треба уточнити тип any в Promise<any>, також дженерик з кастомним типом T не використовується
 function request<T>(
   url: string,
 ): Promise<any> {
