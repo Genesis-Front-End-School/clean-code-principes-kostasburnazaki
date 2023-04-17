@@ -20,8 +20,11 @@ import { Course } from './types/Course';
 
 export const App = () => {
   const [courses, setCourses] = useState<Course[]>(initValues.courses);
+  // Better to use isLoading name instead of loadingStatus
   const [loadingStatus, setLoading] = useState<boolean>(initValues.loadingStatus);
   const [currentPage, setCurrentPage] = useState<number>(initValues.currentPage);
+  
+  // No needed to store this value in state. Better to move it to separate constant
   const [coursesPerPage] = useState<number>(initValues.coursesPerPage);
 
   const indexOfLastCourse = currentPage * coursesPerPage;
