@@ -22,6 +22,7 @@ onReady: (player: any) => void,
 
 export const VideoJS: FC<Props> = ({ options, onReady }) => {
   const videoRef = useRef<HTMLDivElement | null>(null);
+  // гадаю не варто використовувати тип any
   const playerRef = useRef<any>(null);
 
   useEffect(() => {

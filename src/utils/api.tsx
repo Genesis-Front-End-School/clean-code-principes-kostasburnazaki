@@ -1,12 +1,12 @@
 import { Course } from "../types/Course";
 import { Token } from "../types/Token";
-
+// можливо варто винести константи в окремий файлик
 const API_URL = 'https://api.wisey.app';
 const VERSION_URL = '/api/v1';
 const BASE_URL = API_URL + VERSION_URL;
 const COURSES = '/core/preview-courses';
 const AUTH = '/auth/anonymous?platform=subscriptions';
-
+// гадаю треба уточнити тип any в response
 function handleErrors(response: any) {
     if (!response.ok) {
       return Promise.reject(
@@ -20,7 +20,8 @@ function handleErrors(response: any) {
     }
     return response.json();
   }
-
+// можливо варто спробувати переписати асинхронну функцію за допомогою async await
+// гадаю треба уточнити тип any в Promise<any>, також дженерик з кастомним типом T не використовується
 function request<T>(
   url: string,
 ): Promise<any> {
@@ -40,7 +41,7 @@ function request<T>(
         })
     })
 };
-
+// гадаю неправильний дженерик при виклику функції request властивості getCourses (повертається об'єкт з властивістю courses, а не масив курсів)
 export const fetchClient = {
   getCourses: () => request<Course[]>(COURSES),
   getCourse: (id: string) => request<Course>(`${COURSES}/${id}`)

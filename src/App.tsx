@@ -55,6 +55,7 @@ export const App = () => {
       </header>
 
       <main className='has-background-light'>
+{/* можливо варто Routes винести в окремий компонент */}
         <Routes>
           <Route
             path="/"
