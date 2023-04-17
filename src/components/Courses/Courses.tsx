@@ -10,7 +10,9 @@ type Props = {
 
 export const Courses: FC<Props> = ({ courses }) => {
   const playerRef = useRef(null);
-
+  
+  
+  // Probably you need to move this functionality to separate helper or hook since I've already saw something similar in another component
   const handlePlayerReady = (player: any) => {
     playerRef.current = player;
 
@@ -45,8 +47,10 @@ export const Courses: FC<Props> = ({ courses }) => {
           has-text-info
           py-6
         ">
+            {/* Better to move it to separate component */}
             <div className="container px-6">
               <figure className='image'>
+                {/* Try to always fill in the alt attribute */}
                 <img src={course.previewImageLink + '/cover.webp'} alt="" />
               </figure>
 
