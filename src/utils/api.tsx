@@ -1,6 +1,6 @@
 import { Course } from "../types/Course";
 import { Token } from "../types/Token";
-
+// можливо варто винести константи в окремий файлик
 const API_URL = 'https://api.wisey.app';
 const VERSION_URL = '/api/v1';
 const BASE_URL = API_URL + VERSION_URL;
