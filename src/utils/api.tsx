@@ -6,7 +6,7 @@ const VERSION_URL = '/api/v1';
 const BASE_URL = API_URL + VERSION_URL;
 const COURSES = '/core/preview-courses';
 const AUTH = '/auth/anonymous?platform=subscriptions';
-
+// гадаю треба уточнити тип any в response
 function handleErrors(response: any) {
     if (!response.ok) {
       return Promise.reject(
