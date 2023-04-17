@@ -17,6 +17,7 @@ export const CourseComponent: FC<Props> = ({
 }) => {
 
   const [courses, setCourses] = useState<Course[]>(coursesData)
+  // isLoading
   const [loading, setLoading] = useState<boolean>(initValues.loadingStatus);
   const [course, setCourse] = useState<DetailedCourse>();
   const { slug = '' } = useParams();
@@ -56,6 +57,7 @@ export const CourseComponent: FC<Props> = ({
 
   return (
     <>
+      {/* Move it to separate component */}
       <NavLink to='/'>
         <button className="is-button ml-4">
           <i className="fa-solid fa-arrow-left px-6"></i>
@@ -69,6 +71,7 @@ export const CourseComponent: FC<Props> = ({
             {course?.lessons
               .sort((l1, l2) => (l1.order - l2.order))
               .map((lesson: Lesson) => {
+                {/* Move poster and videoJsOptions to some config or helper */}
                 const poster = lesson.status === 'locked'
                   ? 'https://image.shutterstock.com/image-vector/lock-icon-260nw-425675884.jpg'
                   : false
@@ -89,7 +92,7 @@ export const CourseComponent: FC<Props> = ({
 
                 return (
                   <div key={lesson.id} className="lesson pt-6">
-
+                    {/* Move it to separate component */}
                     <h3 className="
                 subtitle
                 is-3
@@ -124,6 +127,7 @@ export const CourseComponent: FC<Props> = ({
                         </h5>
 
                         <p>
+                          {/* Try to avoid hardcoded text like this in production version */}
                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, quaerat molestias. Eaque expedita, dolores inventore laborum ipsa harum cum laudantium placeat accusamus illo? Commodi optio tempora corporis, temporibus accusamus voluptates?
                         </p>
                       </div>

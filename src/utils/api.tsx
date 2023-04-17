@@ -7,6 +7,7 @@ const BASE_URL = API_URL + VERSION_URL;
 const COURSES = '/core/preview-courses';
 const AUTH = '/auth/anonymous?platform=subscriptions';
 
+// Avoud using `any`
 function handleErrors(response: any) {
     if (!response.ok) {
       return Promise.reject(

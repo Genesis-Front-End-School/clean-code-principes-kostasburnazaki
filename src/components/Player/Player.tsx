@@ -5,6 +5,7 @@ import '../../../node_modules/video.js/dist/video-js.css';
 
 type Props = {
   options: {
+    // use a separate interface here
     muted: boolean,
     crossorigin: boolean,
     autoplay: boolean,
@@ -13,6 +14,7 @@ type Props = {
     fluid: boolean,
     poster: string | boolean,
     sources: {
+      // use a separate interface here
       src: string,
       type: string,
     }[]
