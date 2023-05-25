@@ -1,28 +1,18 @@
 import React, { FC, useRef, useEffect } from "react";
 import videojs from 'video.js';
 import '../../../node_modules/video.js/dist/video-js.css';
+import { JsOptions } from "../../types/VideoJSOptions";
+import Player from '../../../node_modules/video.js/dist/types/player';
 
 
 type Props = {
-  options: {
-    muted: boolean,
-    crossorigin: boolean,
-    autoplay: boolean,
-    controls: boolean,
-    responsive: boolean,
-    fluid: boolean,
-    poster: string | boolean,
-    sources: {
-      src: string,
-      type: string,
-    }[]
-  },
-onReady: (player: any) => void,
+  options: JsOptions,
+  onReady: (player: Player) => void,
 };
 
 export const VideoJS: FC<Props> = ({ options, onReady }) => {
   const videoRef = useRef<HTMLDivElement | null>(null);
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<Player | null>(null);
 
   useEffect(() => {
 
@@ -46,6 +36,7 @@ export const VideoJS: FC<Props> = ({ options, onReady }) => {
     }
   }, [options, videoRef, onReady]);
 
+  // Dispose the Video.js player when the functional component unmounts
   useEffect(() => {
     const player = playerRef.current;
 

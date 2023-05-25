@@ -13,6 +13,15 @@ export interface Course {
   meta: Meta,
 }
 
+export interface CourseShort {
+  title: string,
+  lessonsCount: number,
+  previewImageLink: string,
+  rating: number,
+  slug: string,
+  skills: string[],
+}
+
 interface Meta {
   slug: string,
   skills: string[],
@@ -23,7 +32,6 @@ interface CourseVideoPreview {
   link: string,
   duration: number,
   previewImageLink: string
-
 }
 
 export interface Lesson {
@@ -41,4 +49,8 @@ export interface Lesson {
 export interface DetailedCourse extends Course {
   lessons: Lesson[],
   containsLockedLessons: boolean
+}
+
+export interface Courses {
+  courses: Course[],
 }
